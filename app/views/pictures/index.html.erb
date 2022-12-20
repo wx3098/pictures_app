@@ -1,0 +1,13 @@
+<h1>写真一覧</h1>
+
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+
+<% @pictures.each do |picture| %>
+  <tr>
+    <td><%= picture.content %></td>
+  </tr>
+<% end %>
+</table>
