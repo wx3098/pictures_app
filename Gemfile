@@ -23,6 +23,7 @@ gem 'bcrypt'
 gem 'dotenv-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'rexml'
 
 group :development, :test do
   
@@ -31,6 +32,7 @@ end
 
 group :development do
 
+  gem 'letter_opener_web'
   gem 'web-console', '>= 4.1.0'
   
   gem 'rack-mini-profiler', '~> 2.0'

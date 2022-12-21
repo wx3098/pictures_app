@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
     def create
       @picture = Picture.new(picture_params)
       if @picture.save
+      PictureMailer.picture_mail(@picture).deliver
       redirect_to pictures_path, notice: '投稿しました！'
       else
         render :new
@@ -40,7 +41,7 @@ class PicturesController < ApplicationController
     def confirm
         @picture = Picture.new(picture_params)
     end
-    
+
     private
 
     def set_picture
@@ -48,6 +49,6 @@ class PicturesController < ApplicationController
     end
 
     def picture_params
-        params.require(:picture).permit(:content)
+        params.require(:picture).permit(:name, :email, :content)
     end
 end
