@@ -3,11 +3,11 @@
 <p>名前: <%= @picture.name %></p>
 <p>メール: <%= @picture.email %></p>
 <p>内容: <%= @picture.content %></p>
-<p>
-  <strong>Image:</strong>
+
+  <%# <strong>Image:</strong> %>
   <%if @ user.image_url%>
   <%= image_tag @picture.image.url %>
-</p>
+
 
 
   <% unless @picture.user_id == current_user.id %>
