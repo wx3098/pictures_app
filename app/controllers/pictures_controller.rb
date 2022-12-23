@@ -42,11 +42,6 @@ class PicturesController < ApplicationController
       redirect_to pictures_path, notice: '削除しました!'
     end
 
-    def confirm
-        @picture = current_user.pictures.build(picture_params)
-        render :new if @picture.invalid?
-    end
-
     private
 
     def set_picture
