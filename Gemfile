@@ -26,6 +26,7 @@ gem 'binding_of_caller'
 gem 'rexml'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'faker'
 
 group :development, :test do
   
