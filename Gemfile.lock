@@ -153,6 +153,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.10-x86_64-linux)
+      racc (~> 1.4)
     pg (1.4.5)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -256,6 +258,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt
@@ -271,6 +274,9 @@ DEPENDENCIES
   letter_opener_web
   listen (~> 3.3)
   mini_magick
+  net-imap
+  net-pop
+  net-smtp
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

@@ -27,6 +27,9 @@ gem 'rexml'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 
 group :development, :test do
   
