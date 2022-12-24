@@ -26,6 +26,7 @@
   </div>
  <div class="field">
     <%= form.label :image %>
+    <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
     <%= form.file_field :image %>
   </div>
   <%= form.submit %>

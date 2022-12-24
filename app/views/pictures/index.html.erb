@@ -5,6 +5,8 @@
     <th>名前</th>
     <th>メールアドレス</th>
     <th>内容</th>
+    <th>写真</th>
+
   </tr>
 
 <% @pictures.each do |picture| %>
@@ -13,7 +15,7 @@
     <td><%= picture.name %></td>
     <td><%= picture.email %></td>
     <td><%= picture.content %></td>
-    
+    <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
 
      <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
      <td><%= link_to '編集する', edit_picture_path(picture.id), data: { confirm: '本当に編集してもいいですか？'} %></td>

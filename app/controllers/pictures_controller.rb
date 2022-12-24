@@ -5,11 +5,7 @@ class PicturesController < ApplicationController
     end
 
     def new
-      if params[:back]
-        @picture = Picture.new(feed_params)
-      else
         @picture = Picture.new
-      end
     end
 
     def create
