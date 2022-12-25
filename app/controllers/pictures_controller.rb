@@ -9,12 +9,16 @@ class PicturesController < ApplicationController
     end
 
     def create
-        @picture = Picture.new(picture_params)
+        @picture = current_user.pictures.build(picture_params)
+       if params[:back]
+        render :new
+       else
       if @picture.save
     #   PictureMailer.picture_mail(@picture).deliver
       redirect_to pictures_path, notice: '投稿しました！'
-      else
+       else
         render :new
+       end
       end
     end
 
@@ -23,6 +27,7 @@ class PicturesController < ApplicationController
     end
 
     def edit
+      @picture = Picture.find(params[:id])
     end
 
     def update
@@ -37,6 +42,12 @@ class PicturesController < ApplicationController
       @picture.destroy
       redirect_to pictures_path, notice: '削除しました!'
     end
+
+    def confirm
+        @picture = Picture.new(picture_params)
+        @picture = current_user.pictures.build(picture_params)
+        render :new if @picture.invalid?
+      end
 
     private
 
