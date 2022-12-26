@@ -2,12 +2,12 @@
 
 <%= form_with(model: @picture,url: pictures_path,local: true) do |form| %>
    <%= form.hidden_field :name %>
-  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
   <p>タイトル: <%= @picture.name %></p>
-  <p>タイトル: <%= @picture.title %></p>
+  <p>タイトル: <%= @picture.content %></p>
   <p>内容: <%= @picture.content %></p>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
   <%= form.submit "登録する"%>

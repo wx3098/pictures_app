@@ -5,9 +5,9 @@
 <p>内容: <%= @picture.content %></p>
 
   <%# <strong>Image:</strong> %>
-  <%if @ user.image_url%>
+  <%if @picture.image_url%>
   <%= image_tag @picture.image.url %>
-
+<% end %>
 
 
   <% unless @picture.user_id == current_user.id %>

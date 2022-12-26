@@ -23,6 +23,7 @@ class PicturesController < ApplicationController
     end
 
     def show
+      @picture = Picture.find(params[:id])
       @favorite = current_user.favorites.find_by(picture_id: @picture.id)
     end
 
@@ -31,6 +32,7 @@ class PicturesController < ApplicationController
     end
 
     def update
+      @picture = Picture.find(params[:id])
       if @picture.update(picture_params)
         redirect_to pictures_path, notice: '編集しました!'
       else
@@ -45,7 +47,7 @@ class PicturesController < ApplicationController
 
     def confirm
         @picture = Picture.new(picture_params)
-        @picture = current_user.pictures.build(picture_params)
+        @picture.user_id = current_user.id
         render :new if @picture.invalid?
       end
 

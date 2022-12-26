@@ -1,5 +1,5 @@
 <%= form_with(model: @picture, local: true) do |form| %>
-  <% if @post.errors.any? %>
+  <% if @picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
       <ul>

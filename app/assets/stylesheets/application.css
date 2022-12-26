@@ -14,8 +14,20 @@
  *= require_self
  */
 
+
+
  body{
+    display: block;
+    text-align: center;
     background-color: aquamarine;
     margin: auto;
-    width: 500px;
  }
+
+ table{
+    margin-left: 700px;
+ }
+
+ a{
+   display: block;
+   text-align:center;
+}
